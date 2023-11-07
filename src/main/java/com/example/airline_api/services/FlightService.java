@@ -15,4 +15,6 @@ public class FlightService {
         flightRepository.save(flight);
     }
 
+    public void getAllFLights(){}
+
 }
