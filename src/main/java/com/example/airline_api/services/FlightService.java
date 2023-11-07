@@ -17,4 +17,6 @@ public class FlightService {
 
     public void getAllFLights(){}
 
+    public void getFLightById(){}
+
 }
