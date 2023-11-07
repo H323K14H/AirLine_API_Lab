@@ -17,6 +17,8 @@ public class FlightService {
 
     public void getAllFLights(){}
 
-    public void getFLightById(){}
+    public Flight getFlightById(Long id){
+        return flightRepository.findById(id).get();
+    }
 
 }
