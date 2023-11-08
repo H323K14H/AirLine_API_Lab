@@ -18,21 +18,31 @@ public class FlightService {
     @Autowired
     PassengerRepository passengerRepository;
 
-    public void saveFlight(Flight flight){
+    public void saveFlight(Flight flight) {
         flightRepository.save(flight);
     }
 
-    public void getAllFLights(){}
+    public void getAllFLights() {
+    }
 
-    public Flight getFlightById(Long id){
+    public Flight getFlightById(Long id) {
         return flightRepository.findById(id).get();
     }
 
     @Transactional
-    public Flight addPassengerToFlight(BookingDTO bookingDTO, Long id){
+    public Flight addPassengerToFlight(BookingDTO bookingDTO, Long id) {
         Flight flight = flightRepository.findById(id).get();
         Passenger passenger = passengerRepository.findById(bookingDTO.getPassengerId()).get();
         flight.addPassenger(passenger);
         return flight;
+    }
+
+    @Transactional
+    public void cancelFlight(Long id) {
+//        Flight flight = flightRepository.findById(id).get();
+//        for (Passenger passenger : flight.getPassengers()) {
+//            flight.removePassenger(passenger);
+//        }
+        flightRepository.deleteById(id);
     }
 }
