@@ -26,7 +26,6 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         Flight flight1 = new Flight("Home", 2, "Tomorrow", "3 hours from now");
-        flight1.addFlight(flight1);
         flightRepository.save(flight1);
 
         Passenger p1 = new Passenger("Faiz", "FaizFadz01@Gmail.com");
@@ -35,7 +34,6 @@ public class DataLoader implements ApplicationRunner {
 
 
         Flight flight2 = new Flight("Away", 2, "Today", "2 hours from now");
-        flight2.addFlight(flight2);
         flightRepository.save(flight2);
 
         Passenger p2 = new Passenger("Suzi", "SuziTowerzz76@Gmail.com");
@@ -47,8 +45,7 @@ public class DataLoader implements ApplicationRunner {
         passengerRepository.save(p3);
 
 
-        Flight flight3 = new Flight("Here", 2, "Yesterday", "1 hours from now");
-        flight3.addFlight(flight3);
+        Flight flight3 = new Flight("Here", 2, "Yesterday", "1 hour from now");
         flightRepository.save(flight3);
 
         Passenger p4 = new Passenger("Piraven", "PiravenN007@Gmail.com");
@@ -57,7 +54,6 @@ public class DataLoader implements ApplicationRunner {
 
 
         Flight flight4 = new Flight("There", 2, "Some day", "6 hours from now");
-        flight4.addFlight(flight4);
         flightRepository.save(flight4);
     }
 }
